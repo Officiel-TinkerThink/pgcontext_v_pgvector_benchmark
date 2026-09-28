@@ -1,0 +1,10 @@
+2026-09-28 16:29:08,594 INFO probes: probe first-use ...
+2026-09-28 16:29:08,619 INFO probes: building the 50000-vector probe dataset
+2026-09-28 16:30:12,456 INFO probes: first-use [defaults (statement_timeout 0, query_timeout_ms NULL)]: cancellations per fresh backend [6, 6, 6], attempt ms [[751.1, 556.6, 511.8, 507.6, 507.7, 508.7], [585.0, 647.5, 515.5, 507.1, 508.3, 584.4], [673.4, 507.2, 514.8, 508.3, 508.1, 507.8]]
+2026-09-28 16:30:23,219 INFO probes: first-use [session statement_timeout = 1000s]: cancellations per fresh backend [6, 5, 1], attempt ms [[547.0, 539.8, 507.3, 506.5, 508.1, 515.5], [570.9, 507.3, 506.6, 506.7, 4032.3, 188.6], [650.9, 182.2]]
+2026-09-28 16:30:23,245 INFO bench: wrote /results/probes.json
+2026-09-28 16:30:24,097 INFO probes: probe ann-cost ...
+2026-09-28 16:30:24,110 INFO probes: building the 50000-vector probe dataset
+2026-09-28 16:31:38,569 INFO probes: ann-cost: execute_query {'ef32_k1': 106.566, 'ef32_k10': 106.75, 'ef32_k100': 108.448, 'ef256_k1': 107.466, 'ef256_k10': 117.258, 'ef256_k100': 115.707} | raw index {'ef32_k10': 2.887, 'ef256_k10': 3.574}
+2026-09-28 16:31:38,587 INFO bench: wrote /results/probes.json
+[exit 0]

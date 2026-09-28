@@ -1,0 +1,534 @@
+{
+ "versions": {
+  "server": "PostgreSQL 17.10 (Debian 17.10-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+  "extensions": {
+   "vector": "0.8.6",
+   "pgcontext": "0.3.0"
+  },
+  "settings": {
+   "jit": "off",
+   "maintenance_work_mem": "1048576",
+   "max_parallel_maintenance_workers": "2",
+   "pgcontext.hnsw_ef_search": "32",
+   "pgcontext.hnsw_mmap_serving": "on",
+   "pgcontext.hnsw_pack_on_first_use": "on",
+   "pgcontext.hnsw_shared_serving": "on",
+   "shared_buffers": "32768",
+   "statement_timeout": "0",
+   "work_mem": "16384"
+  }
+ },
+ "search-exact": {
+  "n": 1069,
+  "search_fresh_backend": {
+   "last_scan_work": {
+    "page_visits": 0,
+    "node_reads": 0,
+    "candidates": 0,
+    "rechecks": 0,
+    "exact_strategy": false
+   },
+   "serving": {
+    "pack_builds": 0,
+    "pack_reuses": 0,
+    "last_pack_bytes": 0,
+    "mapped_attaches": 0,
+    "shared_attaches": 0
+   },
+   "explain": {
+    "top_node": "Function Scan on search (actual time=10.276..10.277 rows=8 loops=1)",
+    "buffers": "Buffers: shared hit=8985",
+    "execution_time": "10.288 ms"
+   }
+  },
+  "execute_query_after": {
+   "last_scan_work": {
+    "page_visits": 1077,
+    "node_reads": 357,
+    "candidates": 32,
+    "rechecks": 0,
+    "exact_strategy": false
+   },
+   "serving": {
+    "pack_builds": 1,
+    "pack_reuses": 0,
+    "last_pack_bytes": 4683888,
+    "mapped_attaches": 0,
+    "shared_attaches": 0
+   }
+  },
+  "search_ef_independent": true,
+  "search_by_ef_ms": {
+   "8": 10.79,
+   "32": 10.67,
+   "256": 10.55
+  }
+ },
+ "first-use": {
+  "n": 50000,
+  "variants": {
+   "defaults (statement_timeout 0, query_timeout_ms NULL)": [
+    {
+     "until_first_success": {
+      "ok": false,
+      "cancellations": 6,
+      "attempts": [
+       {
+        "ok": false,
+        "ms": 751.1,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 556.6,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 511.8,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.6,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.7,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 508.7,
+        "error": "canceling statement due to statement timeout"
+       }
+      ]
+     },
+     "next_call_ms": null,
+     "statement_timeout": "0"
+    },
+    {
+     "until_first_success": {
+      "ok": false,
+      "cancellations": 6,
+      "attempts": [
+       {
+        "ok": false,
+        "ms": 585.0,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 647.5,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 515.5,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.1,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 508.3,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 584.4,
+        "error": "canceling statement due to statement timeout"
+       }
+      ]
+     },
+     "next_call_ms": null,
+     "statement_timeout": "0"
+    },
+    {
+     "until_first_success": {
+      "ok": false,
+      "cancellations": 6,
+      "attempts": [
+       {
+        "ok": false,
+        "ms": 673.4,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.2,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 514.8,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 508.3,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 508.1,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.8,
+        "error": "canceling statement due to statement timeout"
+       }
+      ]
+     },
+     "next_call_ms": null,
+     "statement_timeout": "0"
+    }
+   ],
+   "session statement_timeout = 1000s": [
+    {
+     "until_first_success": {
+      "ok": false,
+      "cancellations": 6,
+      "attempts": [
+       {
+        "ok": false,
+        "ms": 547.0,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 539.8,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.3,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 506.5,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 508.1,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 515.5,
+        "error": "canceling statement due to statement timeout"
+       }
+      ]
+     },
+     "next_call_ms": null,
+     "statement_timeout": "1000s"
+    },
+    {
+     "until_first_success": {
+      "ok": true,
+      "cancellations": 5,
+      "attempts": [
+       {
+        "ok": false,
+        "ms": 570.9,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 507.3,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 506.6,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 506.7,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": false,
+        "ms": 4032.3,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": true,
+        "ms": 188.6
+       }
+      ]
+     },
+     "next_call_ms": 219.0,
+     "statement_timeout": "1000s"
+    },
+    {
+     "until_first_success": {
+      "ok": true,
+      "cancellations": 1,
+      "attempts": [
+       {
+        "ok": false,
+        "ms": 650.9,
+        "error": "canceling statement due to statement timeout"
+       },
+       {
+        "ok": true,
+        "ms": 182.2
+       }
+      ]
+     },
+     "next_call_ms": 201.7,
+     "statement_timeout": "1000s"
+    }
+   ]
+  },
+  "collection_limits": {
+   "strict_mode": false,
+   "max_dimensions": null,
+   "max_vectors": null,
+   "max_points": null,
+   "max_filter_nodes": null,
+   "max_search_limit": null,
+   "max_candidate_budget": null,
+   "query_timeout_ms": null,
+   "max_index_memory_bytes": null
+  }
+ },
+ "ann-cost": {
+  "n": 50000,
+  "execute_query": {
+   "ef32_k1": {
+    "p50_ms": 106.566,
+    "node_reads": 241
+   },
+   "ef32_k10": {
+    "p50_ms": 106.75,
+    "node_reads": 241
+   },
+   "ef32_k100": {
+    "p50_ms": 108.448,
+    "node_reads": 681
+   },
+   "ef256_k1": {
+    "p50_ms": 107.466,
+    "node_reads": 1237
+   },
+   "ef256_k10": {
+    "p50_ms": 117.258,
+    "node_reads": 1237
+   },
+   "ef256_k100": {
+    "p50_ms": 115.707,
+    "node_reads": 1237
+   }
+  },
+  "raw_index": {
+   "ef32_k10": {
+    "p50_ms": 2.887,
+    "node_reads": 241
+   },
+   "ef256_k10": {
+    "p50_ms": 3.574,
+    "node_reads": 1237
+   }
+  },
+  "warmup": {
+   "ok": false,
+   "cancellations": 6,
+   "attempts": [
+    {
+     "ok": false,
+     "ms": 605.8,
+     "error": "canceling statement due to statement timeout"
+    },
+    {
+     "ok": false,
+     "ms": 507.7,
+     "error": "canceling statement due to statement timeout"
+    },
+    {
+     "ok": false,
+     "ms": 507.1,
+     "error": "canceling statement due to statement timeout"
+    },
+    {
+     "ok": false,
+     "ms": 515.0,
+     "error": "canceling statement due to statement timeout"
+    },
+    {
+     "ok": false,
+     "ms": 509.0,
+     "error": "canceling statement due to statement timeout"
+    },
+    {
+     "ok": false,
+     "ms": 3830.7,
+     "error": "canceling statement due to statement timeout"
+    }
+   ]
+  },
+  "execute_query_explain": {
+   "top_node": "Function Scan on execute_query (actual time=94.551..94.553 rows=10 loops=1)",
+   "buffers": "Buffers: shared hit=1243",
+   "execution_time": "94.564 ms"
+  },
+  "raw_index_warmup": {
+   "ok": true,
+   "cancellations": 0,
+   "attempts": [
+    {
+     "ok": true,
+     "ms": 572.8
+    }
+   ]
+  }
+ },
+ "cpu-split": {
+  "n": 1069,
+  "pgcontext_raw_index": {
+   "wall_ms": 2.577,
+   "on_cpu_ms": 0.87,
+   "off_cpu_ms": 1.707,
+   "voluntary_ctxsw_per_query": 3.0,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 120.3
+  },
+  "pgvector_raw_index": {
+   "wall_ms": 1.126,
+   "on_cpu_ms": 0.894,
+   "off_cpu_ms": 0.233,
+   "voluntary_ctxsw_per_query": 1.0,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 471.7
+  },
+  "pgcontext_raw_index_mmap_serving_off": {
+   "wall_ms": 4.253,
+   "on_cpu_ms": 1.367,
+   "off_cpu_ms": 2.886,
+   "voluntary_ctxsw_per_query": 3.32,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 119.4
+  },
+  "pgcontext_raw_index_shared_and_mmap_serving_off": {
+   "wall_ms": 4.392,
+   "on_cpu_ms": 1.365,
+   "off_cpu_ms": 3.027,
+   "voluntary_ctxsw_per_query": 3.37,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 119.4
+  },
+  "pgcontext_raw_index_pack_on_first_use_off": {
+   "wall_ms": 4.515,
+   "on_cpu_ms": 1.167,
+   "off_cpu_ms": 3.348,
+   "voluntary_ctxsw_per_query": 3.5,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 119.4
+  }
+ },
+ "syscalls": {
+  "n": 1069,
+  "pgcontext_raw_index": {
+   "queries": 928,
+   "samples": 56286,
+   "top_states_pct": {
+    "D fsync jbd2_log_wait_commit": 69.8,
+    "R running 0": 18.9,
+    "D fsync folio_wait_bit_common": 3.4,
+    "D fsync 0": 1.8,
+    "S epoll_wait do_epoll_wait": 1.2,
+    "S epoll_wait 0": 0.7
+   },
+   "fsync_share_pct": 76.6,
+   "fsync_targets": {
+    "/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped/.pending_drop_bucket_cursor": 34770,
+    "/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped": 8095
+   }
+  },
+  "pgvector_raw_index": {
+   "queries": 4497,
+   "samples": 42609,
+   "top_states_pct": {
+    "R running 0": 83.7,
+    "S epoll_wait 0": 4.8,
+    "S epoll_wait do_epoll_wait": 3.5,
+    "R epoll_wait do_epoll_wait": 3.1,
+    "R running do_epoll_wait": 2.7,
+    "S running 0": 1.1
+   },
+   "fsync_share_pct": 0.0,
+   "fsync_targets": {}
+  },
+  "mapped_generation_dirs": {
+   "/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped": {
+    "entries": [
+     ".pending_drop_bucket_cursor",
+     ".pending_drop_bucket_cursor.lock",
+     ".pending_drop_temps",
+     ".pending_drops",
+     "192370",
+     "193448"
+    ],
+    "pending_drops": {
+     "0d": 0,
+     "03": 0,
+     "0f": 0,
+     "02": 0
+    }
+   }
+  }
+ },
+ "dimension": {
+  "n": 1069,
+  "ef_search": 40,
+  "pgcontext_1024": {
+   "wall_ms": 4.618,
+   "on_cpu_ms": 1.021,
+   "off_cpu_ms": 3.597,
+   "voluntary_ctxsw_per_query": 3.0,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 119.7
+  },
+  "pgvector_1024": {
+   "wall_ms": 0.892,
+   "on_cpu_ms": 0.678,
+   "off_cpu_ms": 0.214,
+   "voluntary_ctxsw_per_query": 1.0,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 459.2
+  },
+  "pgcontext_384": {
+   "wall_ms": 2.496,
+   "on_cpu_ms": 0.564,
+   "off_cpu_ms": 1.932,
+   "voluntary_ctxsw_per_query": 3.0,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 94.0
+  },
+  "pgvector_384": {
+   "wall_ms": 0.918,
+   "on_cpu_ms": 0.618,
+   "off_cpu_ms": 0.299,
+   "voluntary_ctxsw_per_query": 1.0,
+   "buffer_reads_per_query": 0.0,
+   "buffer_hits_per_query": 440.5
+  },
+  "ratio_384": {
+   "wall": 2.72,
+   "on_cpu": 0.91
+  },
+  "ratio_1024": {
+   "wall": 5.18,
+   "on_cpu": 1.51
+  }
+ }
+}

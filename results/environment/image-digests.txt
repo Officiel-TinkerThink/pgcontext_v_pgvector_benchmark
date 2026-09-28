@@ -1,0 +1,3 @@
+ghcr.io/evokoa/pgcontext:pg17-v0.3.0 ghcr.io/evokoa/pgcontext@sha256:af620ccb420dc355f14ec6beb85503895d394d53ca692dfb14046baca5f59259
+pgvector/pgvector:0.8.6-pg17 pgvector/pgvector@sha256:cf134a767f474095eeba57e0117be8e568e011a63f33fbf252f14c9b760f8e6f
+python:3.12.10-slim-bookworm python@sha256:fd95fa221297a88e1cf49c55ec1828edd7c5a428187e67b5d1805692d11588db

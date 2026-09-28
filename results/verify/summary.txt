@@ -1,0 +1,87 @@
+versions: {'vector': '0.8.6', 'pgcontext': '0.3.0'} PostgreSQL 17.10 (Debian 17.10-1.pgdg12+
+
+== n=1069
+  pgcontext.index   verify {32: (1.0, 2.448), 64: (1.0, 2.425), 128: (1.0, 2.458), 256: (1.0, 3.151)} | lab {32: (0.9983, 2.322), 64: (1.0, 2.166), 128: (1.0, 2.398), 256: (1.0, 2.624)} | node_reads 1302 | warm {'first_use_cancellations': 0, 'first_call_ms': 88.6}
+  pgcontext.ann     verify {32: (1.0, 7.683), 64: (1.0, 8.267), 128: (1.0, 10.997), 256: (1.0, 8.019)} | lab {32: (1.0, 5.334), 64: (1.0, 5.768), 128: (1.0, 5.778), 256: (1.0, 6.116)} | node_reads 1302 | warm {'first_use_cancellations': 0, 'first_call_ms': 8.8}
+  pgcontext.search  verify {32: (1.0, 11.708)} | lab {32: (1.0, 9.833)} | node_reads 1302 | warm {'first_use_cancellations': 0, 'first_call_ms': 11.6}
+  pgvector          verify {32: (1.0, 0.703), 64: (1.0, 0.873), 128: (1.0, 1.073), 256: (1.0, 1.808)} | lab {32: (1.0, 0.592), 64: (1.0, 0.64), 128: (1.0, 0.926), 256: (1.0, 1.26)} | node_reads None | warm {'first_use_cancellations': 0, 'first_call_ms': 2.0}
+  filt pgcontext.index-postfilter   recall 0.9983 ret 10.0 p50 3.262
+  filt pgcontext.ann-filtered       recall 1.0 ret 10.0 p50 13.463
+  filt pgcontext.search-filtered    recall 1.0 ret 10.0 p50 7.248
+  filt pgvector-postfilter-ef40     recall 0.6267 ret 6.27 p50 1.096
+  filt pgvector-postfilter-ef200    recall 0.9983 ret 10.0 p50 2.177
+  filt pgvector-iterative           recall 0.9983 ret 10.0 p50 1.13
+  conc pgcontext.index   c=1 qps 290.4 p50 3.26 cancels 0 uss 22.9 pss 27.9 cg -17.5
+  conc pgcontext.index   c=4 qps 553.9 p50 6.935 cancels 0 uss 1.9 pss 9.5 cg 9.8
+  conc pgcontext.index   c=8 qps 531.1 p50 14.546 cancels 0 uss 1.9 pss 5.9 cg 18.8
+  conc pgcontext.ann     c=1 qps 124.6 p50 7.566 cancels 0 uss 30.3 pss 35.7 cg 4.1
+  conc pgcontext.ann     c=4 qps 621.0 p50 6.152 cancels 0 uss 3.3 pss 12.6 cg 15.7
+  conc pgcontext.ann     c=8 qps 490.4 p50 9.166 cancels 0 uss 3.3 pss 8.2 cg 30.8
+  conc pgcontext.search  c=1 qps 99.8 p50 9.243 cancels 0 uss 20.9 pss 26.1 cg 3.7
+  conc pgcontext.search  c=4 qps 313.2 p50 12.211 cancels 0 uss 2.7 pss 9.7 cg 13.1
+  conc pgcontext.search  c=8 qps 200.2 p50 36.706 cancels 0 uss 2.6 pss 6.4 cg 25.4
+  conc pgvector          c=1 qps 280.0 p50 3.158 cancels 0 uss 14.3 pss 19.3 cg 2.3
+  conc pgvector          c=4 qps 860.8 p50 4.58 cancels 0 uss 1.9 pss 7.3 cg 9.1
+  conc pgvector          c=8 qps 554.8 p50 8.578 cancels 0 uss 1.8 pss 4.8 cg 17.4
+  build pgcontext 0.258 s 8.4 MiB | pgvector 0.36 s 8.4 MiB
+
+== n=10000
+  pgcontext.index   verify {32: (0.9417, 2.8), 64: (0.985, 2.762), 128: (1.0, 3.051), 256: (1.0, 3.768)} | lab {32: (0.9417, 2.233), 64: (0.9883, 2.253), 128: (1.0, 2.547), 256: (1.0, 2.994)} | node_reads 1432 | warm {'first_use_cancellations': 0, 'first_call_ms': 814.6}
+  pgcontext.ann     verify {32: (0.9417, 34.588), 64: (0.985, 34.884), 128: (1.0, 34.614), 256: (1.0, 35.561)} | lab {32: (0.9333, 28.855), 64: (0.9867, 29.541), 128: (1.0, 29.274), 256: (1.0, 29.543)} | node_reads 1432 | warm {'first_use_cancellations': 0, 'first_call_ms': 40.1}
+  pgcontext.search  verify {32: (1.0, 91.517)} | lab {32: (1.0, 79.568)} | node_reads 1432 | warm {'first_use_cancellations': 0, 'first_call_ms': 114.4}
+  pgvector          verify {32: (0.8633, 0.741), 64: (0.9833, 0.79), 128: (1.0, 1.073), 256: (1.0, 1.631)} | lab {32: (0.935, 0.735), 64: (1.0, 0.942), 128: (1.0, 1.103), 256: (1.0, 1.54)} | node_reads None | warm {'first_use_cancellations': 0, 'first_call_ms': 2.3}
+  filt pgcontext.index-postfilter   recall 0.9683 ret 10.0 p50 3.325
+  filt pgcontext.ann-filtered       recall 1.0 ret 10.0 p50 86.423
+  filt pgcontext.search-filtered    recall 1.0 ret 10.0 p50 42.2
+  filt pgvector-postfilter-ef40     recall 0.56 ret 6.22 p50 0.675
+  filt pgvector-postfilter-ef200    recall 0.9917 ret 10.0 p50 1.243
+  filt pgvector-iterative           recall 0.9033 ret 10.0 p50 0.843
+  conc pgcontext.index   c=1 qps 324.9 p50 2.835 cancels 0 uss 82.9 pss 88.7 cg -129.1
+  conc pgcontext.index   c=4 qps 563.4 p50 6.838 cancels 0 uss 1.9 pss 24.9 cg 10.8
+  conc pgcontext.index   c=8 qps 592.9 p50 13.529 cancels 0 uss 1.9 pss 13.6 cg 20.4
+  conc pgcontext.ann     c=1 qps 36.8 p50 24.56 cancels 0 uss 105.8 pss 114.5 cg 4.5
+  conc pgcontext.ann     c=4 qps 147.1 p50 26.213 cancels 0 uss 3.4 pss 33.3 cg 16.1
+  conc pgcontext.ann     c=8 qps 92.1 p50 92.652 cancels 8 uss 3.2 pss 18.8 cg 30.6
+  conc pgcontext.search  c=1 qps 13.9 p50 65.01 cancels 0 uss 53.0 pss 68.2 cg 3.3
+  conc pgcontext.search  c=4 qps 39.1 p50 102.608 cancels 0 uss 2.6 pss 21.6 cg 12.6
+  conc pgcontext.search  c=8 qps 23.4 p50 356.029 cancels 0 uss 2.6 pss 12.6 cg 24.7
+  conc pgvector          c=1 qps 938.8 p50 0.939 cancels 0 uss 24.1 pss 68.6 cg 2.5
+  conc pgvector          c=4 qps 3777.6 p50 0.947 cancels 0 uss 1.9 pss 25.7 cg 10.4
+  conc pgvector          c=8 qps 1868.1 p50 3.987 cancels 0 uss 1.9 pss 14.9 cg 20.7
+  build pgcontext 1.936 s 78.7 MiB | pgvector 2.917 s 78.1 MiB
+
+== n=50000
+  pgcontext.index   verify {32: (0.78, 3.283), 64: (0.8483, 3.595), 128: (0.915, 3.322), 256: (0.9817, 3.661)} | lab {32: (0.68, 3.944), 64: (0.83, 3.25), 128: (0.9433, 3.451), 256: (0.9933, 3.97)} | node_reads 1460 | warm {'first_use_cancellations': 0, 'first_call_ms': 3889.5}
+  pgcontext.ann     verify {32: (0.78, 161.302), 64: (0.8483, 149.674), 128: (0.915, 127.951), 256: (0.9817, 100.967)} | lab {32: (0.71, 82.23), 64: (0.8433, 82.007), 128: (0.9, 82.409), 256: (0.9767, 82.851)} | node_reads 1460 | warm {'first_use_cancellations': 0, 'first_call_ms': 210.0}
+  pgcontext.search  verify {32: (0.9983, 387.189)} | lab {32: (0.9983, 332.806)} | node_reads 1460 | warm {'first_use_cancellations': 0, 'first_call_ms': 360.2}
+  pgvector          verify {32: (0.745, 2.489), 64: (0.805, 0.814), 128: (0.885, 0.936), 256: (0.9783, 1.346)} | lab {32: (0.68, 2.649), 64: (0.7983, 0.754), 128: (0.8317, 0.926), 256: (0.9367, 1.343)} | node_reads None | warm {'first_use_cancellations': 0, 'first_call_ms': 12.7}
+  filt pgcontext.index-postfilter   recall 0.8283 ret 10.0 p50 3.652
+  filt pgcontext.ann-filtered       recall 1.0 ret 10.0 p50 187.34
+  filt pgcontext.search-filtered    recall 1.0 ret 10.0 p50 52.755
+  filt pgvector-postfilter-ef40     recall 0.5367 ret 6.68 p50 0.982
+  filt pgvector-postfilter-ef200    recall 0.96 ret 10.0 p50 1.212
+  filt pgvector-iterative           recall 0.79 ret 10.0 p50 0.762
+  conc pgcontext.index   c=1 qps 288.1 p50 3.187 cancels 0 uss 224.3 pss 246.4 cg -621.5
+  conc pgcontext.index   c=4 qps 684.6 p50 5.66 cancels 0 uss 1.9 pss 68.6 cg 13.0
+  conc pgcontext.index   c=8 qps 600.6 p50 13.481 cancels 0 uss 1.9 pss 36.0 cg 24.9
+  conc pgcontext.ann     c=1 qps 9.5 p50 96.511 cancels 1 uss 246.1 pss 288.6 cg 7.7
+  conc pgcontext.ann     c=4 qps 30.4 p50 130.818 cancels 4 uss 6.1 pss 85.7 cg 29.4
+  conc pgcontext.ann     c=8 qps 24.0 p50 243.745 cancels 14 uss 5.4 pss 44.5 cg 52.9
+  conc pgcontext.search  c=1 qps 2.4 p50 429.291 cancels 0 uss 55.5 pss 160.9 cg 6.8
+  conc pgcontext.search  c=4 qps 7.5 p50 547.358 cancels 0 uss 4.6 pss 61.2 cg 22.1
+  conc pgcontext.search  c=8 qps 5.9 p50 1524.621 cancels 0 uss 4.5 pss 35.7 cg 42.7
+  conc pgvector          c=1 qps 1246.2 p50 0.712 cancels 0 uss 21.2 pss 56.7 cg 2.9
+  conc pgvector          c=4 qps 4247.1 p50 0.869 cancels 0 uss 1.9 pss 32.9 cg 11.0
+  conc pgvector          c=8 qps 2220.6 p50 3.35 cancels 0 uss 1.9 pss 19.0 cg 22.5
+  build pgcontext 11.112 s 393.5 MiB | pgvector 14.282 s 390.6 MiB
+
+search-exact: {"search_fresh_backend": {"last_scan_work": {"page_visits": 0, "node_reads": 0, "candidates": 0, "rechecks": 0, "exact_strategy": false}, "serving": {"pack_builds": 0, "pack_reuses": 0, "last_pack_bytes": 0, "mapped_attaches": 0, "shared_attaches": 0}, "explain": {"top_node": "Function Scan on search (actual time=10.276..10.277 rows=8 loops=1)", "buffers": "Buffers: shared hit=8985", "execution_time": "10.288 ms"}}, "execute_query_after": {"last_scan_work": {"page_visits": 1077, "node_reads": 357, "candidates": 32, "rechecks": 0, "exact_strategy": false}, "serving": {"pack_builds": 1, "pack_reuses": 0, "last_pack_bytes": 4683888, "mapped_attaches": 0, "shared_attaches": 0}}, "search_ef_independent": true, "search_by_ef_ms": {"8": 10.79, "32": 10.67, "256": 10.55}}
+
+cpu-split: {"n": 1069, "pgcontext_raw_index": {"wall_ms": 2.577, "on_cpu_ms": 0.87, "off_cpu_ms": 1.707, "voluntary_ctxsw_per_query": 3.0, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 120.3}, "pgvector_raw_index": {"wall_ms": 1.126, "on_cpu_ms": 0.894, "off_cpu_ms": 0.233, "voluntary_ctxsw_per_query": 1.0, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 471.7}, "pgcontext_raw_index_mmap_serving_off": {"wall_ms": 4.253, "on_cpu_ms": 1.367, "off_cpu_ms": 2.886, "voluntary_ctxsw_per_query": 3.32, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 119.4}, "pgcontext_raw_index_shared_and_mmap_serving_off": {"wall_ms": 4.392, "on_cpu_ms": 1.365, "off_cpu_ms": 3.027, "voluntary_ctxsw_per_query": 3.37, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 119.4}, "pgcontext_raw_index_pack_on_first_use_off": {"wall_ms": 4.515, "on_cpu_ms": 1.167, "off_cpu_ms": 3.348, "voluntary_ctxsw_per_query": 3.5, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 119.4}}
+
+syscalls: {"pgcontext_raw_index": [76.6, {"D fsync jbd2_log_wait_commit": 69.8, "R running 0": 18.9, "D fsync folio_wait_bit_common": 3.4, "D fsync 0": 1.8, "S epoll_wait do_epoll_wait": 1.2, "S epoll_wait 0": 0.7}, {"/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped/.pending_drop_bucket_cursor": 34770, "/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped": 8095}], "pgvector_raw_index": [0.0, {"R running 0": 83.7, "S epoll_wait 0": 4.8, "S epoll_wait do_epoll_wait": 3.5, "R epoll_wait do_epoll_wait": 3.1, "R running do_epoll_wait": 2.7, "S running 0": 1.1}, {}]}
+mapped dirs: {"/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped": {"entries": [".pending_drop_bucket_cursor", ".pending_drop_bucket_cursor.lock", ".pending_drop_temps", ".pending_drops", "192370", "193448"], "pending_drops": {"0d": 0, "03": 0, "0f": 0, "02": 0}}}
+
+dimension: {"ef_search": 40, "pgcontext_1024": {"wall_ms": 4.618, "on_cpu_ms": 1.021, "off_cpu_ms": 3.597, "voluntary_ctxsw_per_query": 3.0, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 119.7}, "pgvector_1024": {"wall_ms": 0.892, "on_cpu_ms": 0.678, "off_cpu_ms": 0.214, "voluntary_ctxsw_per_query": 1.0, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 459.2}, "pgcontext_384": {"wall_ms": 2.496, "on_cpu_ms": 0.564, "off_cpu_ms": 1.932, "voluntary_ctxsw_per_query": 3.0, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 94.0}, "pgvector_384": {"wall_ms": 0.918, "on_cpu_ms": 0.618, "off_cpu_ms": 0.299, "voluntary_ctxsw_per_query": 1.0, "buffer_reads_per_query": 0.0, "buffer_hits_per_query": 440.5}, "ratio_384": {"wall": 2.72, "on_cpu": 0.91}, "ratio_1024": {"wall": 5.18, "on_cpu": 1.51}}
+
+ann-cost: {"execute_query": {"ef32_k1": {"p50_ms": 106.566, "node_reads": 241}, "ef32_k10": {"p50_ms": 106.75, "node_reads": 241}, "ef32_k100": {"p50_ms": 108.448, "node_reads": 681}, "ef256_k1": {"p50_ms": 107.466, "node_reads": 1237}, "ef256_k10": {"p50_ms": 117.258, "node_reads": 1237}, "ef256_k100": {"p50_ms": 115.707, "node_reads": 1237}}, "raw_index": {"ef32_k10": {"p50_ms": 2.887, "node_reads": 241}, "ef256_k10": {"p50_ms": 3.574, "node_reads": 1237}}, "execute_query_explain": {"top_node": "Function Scan on execute_query (actual time=94.551..94.553 rows=10 loops=1)", "buffers": "Buffers: shared hit=1243", "execution_time": "94.564 ms"}}

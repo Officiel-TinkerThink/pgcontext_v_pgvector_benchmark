@@ -1,0 +1,9 @@
+pgcontext   384-d | wall p50  1.750 ms | on-CPU  0.621 ms | vol ctxsw  3.0/q | node_reads 370 | plan ->  Index Scan using chunk_mm_minilm_hnsw on chunk_mm
+pgcontext  1024-d | wall p50  1.928 ms | on-CPU  0.797 ms | vol ctxsw  3.0/q | node_reads 410 | plan ->  Index Scan using chunk_mm_e5_hnsw on chunk_mm
+pgvector    384-d | wall p50  0.406 ms | on-CPU  0.282 ms | vol ctxsw  1.0/q | node_reads None | plan ->  Index Scan using v_minilm_hnsw on v
+pgvector   1024-d | wall p50  0.527 ms | on-CPU  0.443 ms | vol ctxsw  1.0/q | node_reads None | plan ->  Index Scan using v_e5_hnsw on v
+ratio pgContext/pgvector at 384-d: on-CPU 2.20x, wall 4.31x
+ratio pgContext/pgvector at 1024-d: on-CPU 1.80x, wall 3.66x
+pgcontext: 1024-d / 384-d on-CPU 1.28x, wall 1.10x
+pgvector: 1024-d / 384-d on-CPU 1.57x, wall 1.30x
+[exit 0]

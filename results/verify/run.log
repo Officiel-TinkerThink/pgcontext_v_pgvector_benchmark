@@ -1,0 +1,191 @@
+[16:14:33] scale_vector
+2026-09-28 16:14:35,888 INFO scale_vector: pgcontext.index  ef=32   recall@10 1.000 p50 2.45 ms
+2026-09-28 16:14:36,038 INFO scale_vector: pgcontext.index  ef=64   recall@10 1.000 p50 2.42 ms
+2026-09-28 16:14:36,197 INFO scale_vector: pgcontext.index  ef=128  recall@10 1.000 p50 2.46 ms
+2026-09-28 16:14:36,400 INFO scale_vector: pgcontext.index  ef=256  recall@10 1.000 p50 3.15 ms
+2026-09-28 16:14:36,963 INFO scale_vector: pgcontext.ann    ef=32   recall@10 1.000 p50 7.68 ms
+2026-09-28 16:14:37,522 INFO scale_vector: pgcontext.ann    ef=64   recall@10 1.000 p50 8.27 ms
+2026-09-28 16:14:38,148 INFO scale_vector: pgcontext.ann    ef=128  recall@10 1.000 p50 11.00 ms
+2026-09-28 16:14:38,676 INFO scale_vector: pgcontext.ann    ef=256  recall@10 1.000 p50 8.02 ms
+2026-09-28 16:14:39,519 INFO scale_vector: pgcontext.search ef=32   recall@10 1.000 p50 11.71 ms
+2026-09-28 16:14:39,572 INFO scale_vector: pgvector         ef=32   recall@10 1.000 p50 0.70 ms
+2026-09-28 16:14:39,627 INFO scale_vector: pgvector         ef=64   recall@10 1.000 p50 0.87 ms
+2026-09-28 16:14:39,698 INFO scale_vector: pgvector         ef=128  recall@10 1.000 p50 1.07 ms
+2026-09-28 16:14:39,810 INFO scale_vector: pgvector         ef=256  recall@10 1.000 p50 1.81 ms
+2026-09-28 16:14:39,679 INFO scale_vector: filtered pgcontext.index-postfilter recall@10 0.998 returned 10.0 p50 3.26 ms
+2026-09-28 16:14:40,564 INFO scale_vector: filtered pgcontext.ann-filtered     recall@10 1.000 returned 10.0 p50 13.46 ms
+2026-09-28 16:14:41,029 INFO scale_vector: filtered pgcontext.search-filtered  recall@10 1.000 returned 10.0 p50 7.25 ms
+2026-09-28 16:14:41,101 INFO scale_vector: filtered pgvector-postfilter-ef40   recall@10 0.627 returned 6.3 p50 1.10 ms
+2026-09-28 16:14:41,237 INFO scale_vector: filtered pgvector-postfilter-ef200  recall@10 0.998 returned 10.0 p50 2.18 ms
+2026-09-28 16:14:41,310 INFO scale_vector: filtered pgvector-iterative         recall@10 0.998 returned 10.0 p50 1.13 ms
+2026-09-28 16:14:49,369 INFO scale_vector: n=1069   pgcontext.index  c=1  qps   290.4 p50   3.26 ms | first-use cancels 0
+2026-09-28 16:15:02,580 INFO scale_vector: n=1069   pgcontext.index  c=4  qps   553.9 p50   6.93 ms | first-use cancels 0
+2026-09-28 16:15:15,364 INFO scale_vector: n=1069   pgcontext.index  c=8  qps   531.1 p50  14.55 ms | first-use cancels 0
+2026-09-28 16:15:28,542 INFO scale_vector: n=1069   pgcontext.ann    c=1  qps   124.6 p50   7.57 ms | first-use cancels 0
+2026-09-28 16:15:41,764 INFO scale_vector: n=1069   pgcontext.ann    c=4  qps   621.0 p50   6.15 ms | first-use cancels 0
+2026-09-28 16:15:54,653 INFO scale_vector: n=1069   pgcontext.ann    c=8  qps   490.4 p50   9.17 ms | first-use cancels 0
+2026-09-28 16:16:07,783 INFO scale_vector: n=1069   pgcontext.search c=1  qps    99.8 p50   9.24 ms | first-use cancels 0
+2026-09-28 16:16:20,340 INFO scale_vector: n=1069   pgcontext.search c=4  qps   313.2 p50  12.21 ms | first-use cancels 0
+2026-09-28 16:16:33,867 INFO scale_vector: n=1069   pgcontext.search c=8  qps   200.2 p50  36.71 ms | first-use cancels 0
+2026-09-28 16:16:46,340 INFO scale_vector: n=1069   pgvector         c=1  qps   280.0 p50   3.16 ms | first-use cancels 0
+2026-09-28 16:16:59,505 INFO scale_vector: n=1069   pgvector         c=4  qps   860.8 p50   4.58 ms | first-use cancels 0
+2026-09-28 16:17:12,809 INFO scale_vector: n=1069   pgvector         c=8  qps   554.8 p50   8.58 ms | first-use cancels 0
+2026-09-28 16:17:17,854 INFO bench: wrote /results/scale-vector.json
+2026-09-28 16:17:33,180 INFO scale_vector: pgcontext.index  ef=32   recall@10 0.942 p50 2.80 ms
+2026-09-28 16:17:33,351 INFO scale_vector: pgcontext.index  ef=64   recall@10 0.985 p50 2.76 ms
+2026-09-28 16:17:33,554 INFO scale_vector: pgcontext.index  ef=128  recall@10 1.000 p50 3.05 ms
+2026-09-28 16:17:33,796 INFO scale_vector: pgcontext.index  ef=256  recall@10 1.000 p50 3.77 ms
+2026-09-28 16:17:36,244 INFO scale_vector: pgcontext.ann    ef=32   recall@10 0.942 p50 34.59 ms
+2026-09-28 16:17:38,524 INFO scale_vector: pgcontext.ann    ef=64   recall@10 0.985 p50 34.88 ms
+2026-09-28 16:17:40,720 INFO scale_vector: pgcontext.ann    ef=128  recall@10 1.000 p50 34.61 ms
+2026-09-28 16:17:42,912 INFO scale_vector: pgcontext.ann    ef=256  recall@10 1.000 p50 35.56 ms
+2026-09-28 16:17:49,311 INFO scale_vector: pgcontext.search ef=32   recall@10 1.000 p50 91.52 ms
+2026-09-28 16:17:49,370 INFO scale_vector: pgvector         ef=32   recall@10 0.863 p50 0.74 ms
+2026-09-28 16:17:49,422 INFO scale_vector: pgvector         ef=64   recall@10 0.983 p50 0.79 ms
+2026-09-28 16:17:49,489 INFO scale_vector: pgvector         ef=128  recall@10 1.000 p50 1.07 ms
+2026-09-28 16:17:49,601 INFO scale_vector: pgvector         ef=256  recall@10 1.000 p50 1.63 ms
+2026-09-28 16:17:49,961 INFO scale_vector: filtered pgcontext.index-postfilter recall@10 0.968 returned 10.0 p50 3.33 ms
+2026-09-28 16:17:54,904 INFO scale_vector: filtered pgcontext.ann-filtered     recall@10 1.000 returned 10.0 p50 86.42 ms
+2026-09-28 16:17:57,628 INFO scale_vector: filtered pgcontext.search-filtered  recall@10 1.000 returned 10.0 p50 42.20 ms
+2026-09-28 16:17:57,674 INFO scale_vector: filtered pgvector-postfilter-ef40   recall@10 0.560 returned 6.2 p50 0.68 ms
+2026-09-28 16:17:57,751 INFO scale_vector: filtered pgvector-postfilter-ef200  recall@10 0.992 returned 10.0 p50 1.24 ms
+2026-09-28 16:17:57,804 INFO scale_vector: filtered pgvector-iterative         recall@10 0.903 returned 10.0 p50 0.84 ms
+2026-09-28 16:18:05,967 INFO scale_vector: n=10000  pgcontext.index  c=1  qps   324.9 p50   2.83 ms | first-use cancels 0
+2026-09-28 16:18:19,408 INFO scale_vector: n=10000  pgcontext.index  c=4  qps   563.4 p50   6.84 ms | first-use cancels 0
+2026-09-28 16:18:32,638 INFO scale_vector: n=10000  pgcontext.index  c=8  qps   592.9 p50  13.53 ms | first-use cancels 0
+2026-09-28 16:18:46,170 INFO scale_vector: n=10000  pgcontext.ann    c=1  qps    36.8 p50  24.56 ms | first-use cancels 0
+2026-09-28 16:18:59,207 INFO scale_vector: n=10000  pgcontext.ann    c=4  qps   147.1 p50  26.21 ms | first-use cancels 0
+2026-09-28 16:19:04,954 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 576 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,959 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 573 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,966 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 581 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,972 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 582 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,972 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 586 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,972 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 583 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,976 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 589 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:04,987 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 589 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:19:13,579 INFO scale_vector: n=10000  pgcontext.ann    c=8  qps    92.1 p50  92.65 ms | first-use cancels 8
+2026-09-28 16:19:26,688 INFO scale_vector: n=10000  pgcontext.search c=1  qps    13.9 p50  65.01 ms | first-use cancels 0
+2026-09-28 16:19:40,812 INFO scale_vector: n=10000  pgcontext.search c=4  qps    39.1 p50 102.61 ms | first-use cancels 0
+2026-09-28 16:19:56,187 INFO scale_vector: n=10000  pgcontext.search c=8  qps    23.4 p50 356.03 ms | first-use cancels 0
+2026-09-28 16:20:08,578 INFO scale_vector: n=10000  pgvector         c=1  qps   938.8 p50   0.94 ms | first-use cancels 0
+2026-09-28 16:20:21,744 INFO scale_vector: n=10000  pgvector         c=4  qps  3777.6 p50   0.95 ms | first-use cancels 0
+2026-09-28 16:20:34,366 INFO scale_vector: n=10000  pgvector         c=8  qps  1868.1 p50   3.99 ms | first-use cancels 0
+2026-09-28 16:20:39,393 INFO bench: wrote /results/scale-vector.json
+2026-09-28 16:22:02,450 INFO scale_vector: pgcontext.index  ef=32   recall@10 0.780 p50 3.28 ms
+2026-09-28 16:22:02,669 INFO scale_vector: pgcontext.index  ef=64   recall@10 0.848 p50 3.60 ms
+2026-09-28 16:22:02,867 INFO scale_vector: pgcontext.index  ef=128  recall@10 0.915 p50 3.32 ms
+2026-09-28 16:22:03,096 INFO scale_vector: pgcontext.index  ef=256  recall@10 0.982 p50 3.66 ms
+2026-09-28 16:22:13,537 INFO scale_vector: pgcontext.ann    ef=32   recall@10 0.780 p50 161.30 ms
+2026-09-28 16:22:23,379 INFO scale_vector: pgcontext.ann    ef=64   recall@10 0.848 p50 149.67 ms
+2026-09-28 16:22:31,098 INFO scale_vector: pgcontext.ann    ef=128  recall@10 0.915 p50 127.95 ms
+2026-09-28 16:22:36,969 INFO scale_vector: pgcontext.ann    ef=256  recall@10 0.982 p50 100.97 ms
+2026-09-28 16:23:03,253 INFO scale_vector: pgcontext.search ef=32   recall@10 0.998 p50 387.19 ms
+2026-09-28 16:23:03,429 INFO scale_vector: pgvector         ef=32   recall@10 0.745 p50 2.49 ms
+2026-09-28 16:23:03,485 INFO scale_vector: pgvector         ef=64   recall@10 0.805 p50 0.81 ms
+2026-09-28 16:23:03,551 INFO scale_vector: pgvector         ef=128  recall@10 0.885 p50 0.94 ms
+2026-09-28 16:23:03,642 INFO scale_vector: pgvector         ef=256  recall@10 0.978 p50 1.35 ms
+2026-09-28 16:23:04,033 INFO scale_vector: filtered pgcontext.index-postfilter recall@10 0.828 returned 10.0 p50 3.65 ms
+2026-09-28 16:23:15,143 INFO scale_vector: filtered pgcontext.ann-filtered     recall@10 1.000 returned 10.0 p50 187.34 ms
+2026-09-28 16:23:18,505 INFO scale_vector: filtered pgcontext.search-filtered  recall@10 1.000 returned 10.0 p50 52.76 ms
+2026-09-28 16:23:18,570 INFO scale_vector: filtered pgvector-postfilter-ef40   recall@10 0.537 returned 6.7 p50 0.98 ms
+2026-09-28 16:23:18,647 INFO scale_vector: filtered pgvector-postfilter-ef200  recall@10 0.960 returned 10.0 p50 1.21 ms
+2026-09-28 16:23:18,698 INFO scale_vector: filtered pgvector-iterative         recall@10 0.790 returned 10.0 p50 0.76 ms
+2026-09-28 16:23:27,308 INFO scale_vector: n=50000  pgcontext.index  c=1  qps   288.1 p50   3.19 ms | first-use cancels 0
+2026-09-28 16:23:40,790 INFO scale_vector: n=50000  pgcontext.index  c=4  qps   684.6 p50   5.66 ms | first-use cancels 0
+2026-09-28 16:23:56,876 INFO scale_vector: n=50000  pgcontext.index  c=8  qps   600.6 p50  13.48 ms | first-use cancels 0
+2026-09-28 16:24:02,754 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 834 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:10,645 INFO scale_vector: n=50000  pgcontext.ann    c=1  qps     9.5 p50  96.51 ms | first-use cancels 1
+2026-09-28 16:24:16,635 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 874 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:16,635 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 876 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:16,651 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 890 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:16,657 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 897 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:25,442 INFO scale_vector: n=50000  pgcontext.ann    c=4  qps    30.4 p50 130.82 ms | first-use cancels 4
+2026-09-28 16:24:32,575 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 1810 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,675 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 1921 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,716 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 1948 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,772 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 2010 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,773 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 2013 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,785 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 2037 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,809 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 2056 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:32,904 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 2150 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:33,611 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 503 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:34,118 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 505 ms (attempt 2): canceling statement due to statement timeout
+2026-09-28 16:24:34,278 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 506 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:34,671 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 553 ms (attempt 1): canceling statement due to statement timeout
+2026-09-28 16:24:34,672 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 552 ms (attempt 3): canceling statement due to statement timeout
+2026-09-28 16:24:34,811 WARNING scale_vector: pgcontext.ann warm-up call cancelled after 504 ms (attempt 1): canceling statement due to statement timeout
+Exception in thread Thread-139 (work)Exception in thread Thread-138 (work):
+Traceback (most recent call last):
+:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+  File "/usr/local/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    self.run()  File "/usr/local/lib/python3.12/threading.py", line 1012, in run
+
+  File "/usr/local/lib/python3.12/threading.py", line 1012, in run
+        self._target(*self._args, **self._kwargs)self._target(*self._args, **self._kwargs)
+
+  File "/bench/scale_vector.py", line 262, in work
+  File "/bench/scale_vector.py", line 262, in work
+    c.execute(QUERY_SQL[engine], (qlits[j % len(qlits)], K)).fetchall()
+      c.execute(QUERY_SQL[engine], (qlits[j % len(qlits)], K)).fetchall()
+   ^^  ^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg/connection.py", line 269, in execute
+^    raise ex.with_traceback(None)^^
+
+  File "/usr/local/lib/python3.12/site-packages/psycopg/connection.py", line 269, in execute
+psycopg.errors.QueryCanceled:     canceling statement due to statement timeout
+raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
+2026-09-28 16:24:42,752 INFO scale_vector: n=50000  pgcontext.ann    c=8  qps    24.0 p50 243.75 ms | first-use cancels 14
+2026-09-28 16:24:58,949 INFO scale_vector: n=50000  pgcontext.search c=1  qps     2.4 p50 429.29 ms | first-use cancels 0
+2026-09-28 16:25:15,144 INFO scale_vector: n=50000  pgcontext.search c=4  qps     7.5 p50 547.36 ms | first-use cancels 0
+2026-09-28 16:25:38,494 INFO scale_vector: n=50000  pgcontext.search c=8  qps     5.9 p50 1524.62 ms | first-use cancels 0
+2026-09-28 16:25:50,874 INFO scale_vector: n=50000  pgvector         c=1  qps  1246.2 p50   0.71 ms | first-use cancels 0
+2026-09-28 16:26:04,039 INFO scale_vector: n=50000  pgvector         c=4  qps  4247.1 p50   0.87 ms | first-use cancels 0
+2026-09-28 16:26:16,717 INFO scale_vector: n=50000  pgvector         c=8  qps  2220.6 p50   3.35 ms | first-use cancels 0
+2026-09-28 16:26:21,770 INFO bench: wrote /results/scale-vector.json
+[16:26:22] probes
+2026-09-28 16:26:23,185 INFO probes: probe search-exact ...
+2026-09-28 16:26:24,356 INFO probes: search-exact: fresh-backend node_reads 0, packs 0, explain Buffers: shared hit=8985 | ANN node_reads 357
+2026-09-28 16:26:24,368 INFO bench: wrote /results/probes.json
+2026-09-28 16:26:24,369 INFO probes: probe first-use ...
+2026-09-28 16:26:24,383 INFO probes: building the 50000-vector probe dataset
+2026-09-28 16:27:17,829 ERROR probes: probe first-use failed
+Traceback (most recent call last):
+  File "/bench/probes.py", line 363, in main
+    report[name] = PROBES[name](qlits, base)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/probes.py", line 178, in probe_first_use
+    c.execute(ann_sql(schema), (qlits[i + 10], K)).fetchall()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg/connection.py", line 269, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
+2026-09-28 16:27:17,845 INFO bench: wrote /results/probes.json
+2026-09-28 16:27:17,845 INFO probes: probe ann-cost ...
+2026-09-28 16:27:23,109 ERROR probes: probe ann-cost failed
+Traceback (most recent call last):
+  File "/bench/probes.py", line 363, in main
+    report[name] = PROBES[name](qlits, base)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/bench/probes.py", line 205, in probe_ann_cost
+    c.execute(ann_sql(schema), (q, k)).fetchall()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg/connection.py", line 269, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.QueryCanceled: canceling statement due to statement timeout
+2026-09-28 16:27:23,126 INFO bench: wrote /results/probes.json
+2026-09-28 16:27:23,127 INFO probes: probe cpu-split ...
+2026-09-28 16:27:29,178 INFO probes: cpu-split: {'pgcontext_raw_index': (2.577, 0.87, 3.0), 'pgvector_raw_index': (1.126, 0.894, 1.0), 'pgcontext_raw_index_mmap_serving_off': (4.253, 1.367, 3.32), 'pgcontext_raw_index_shared_and_mmap_serving_off': (4.392, 1.365, 3.37), 'pgcontext_raw_index_pack_on_first_use_off': (4.515, 1.167, 3.5)}
+2026-09-28 16:27:29,202 INFO bench: wrote /results/probes.json
+2026-09-28 16:27:29,203 INFO probes: probe syscalls ...
+2026-09-28 16:27:33,352 INFO probes: syscalls pgcontext_raw_index: fsync 76.6 % of samples, targets {'/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped/.pending_drop_bucket_cursor': 34770, '/var/lib/postgresql/data/base/16384/pgcontext_hnsw_mapped': 8095}
+2026-09-28 16:27:37,373 INFO probes: syscalls pgvector_raw_index: fsync 0.0 % of samples, targets {}
+2026-09-28 16:27:37,389 INFO bench: wrote /results/probes.json
+2026-09-28 16:27:37,389 INFO probes: probe dimension ...
+2026-09-28 16:27:43,162 INFO probes: dimension: ratio 384 {'wall': 2.72, 'on_cpu': 0.91} | ratio 1024 {'wall': 5.18, 'on_cpu': 1.51}
+2026-09-28 16:27:43,179 INFO bench: wrote /results/probes.json
+[16:27:43] done - results in /results (./results/run on the host)
+[exit 0]

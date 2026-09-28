@@ -1,0 +1,80 @@
+# pgContext 0.3.0 vs pgvector 0.8.6 reproduction.
+#   python scripts/make_secret.py && docker compose up -d pg && docker compose run --rm bench
+# Settings below are the ones of the original run (4 vCPU / 4 GiB database container, shared_buffers 256 MB).
+# Results land in ./results/run (REPRO_DIR: absolute path of this directory as the Docker daemon sees it, only needed
+# when the daemon runs elsewhere, e.g. Docker Engine inside WSL2 without Docker Desktop).
+name: pgctx-repro
+
+services:
+  pg:
+    build: ./docker/pg
+    image: pgctx-repro/pg:17-pgcontext0.3.0-pgvector0.8.6
+    container_name: pgctx-repro-pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_password
+      POSTGRES_DB: repro
+    secrets: [pg_password]
+    command:
+      - postgres
+      - -c
+      - shared_preload_libraries=pg_stat_statements
+      - -c
+      - shared_buffers=256MB
+      - -c
+      - work_mem=16MB
+      - -c
+      - maintenance_work_mem=1GB
+      - -c
+      - max_connections=100
+      - -c
+      - jit=off
+      - -c
+      - track_io_timing=on
+      - -c
+      - pgcontext.query_telemetry_enabled=off
+    shm_size: 1g
+    mem_limit: 4g
+    cpus: 4
+    volumes:
+      - pgctx-repro-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d repro"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks: [pgctx-repro-net]
+
+  bench:
+    build:
+      context: .
+      dockerfile: docker/bench/Dockerfile
+    image: pgctx-repro/bench:py3.12
+    container_name: pgctx-repro-bench
+    depends_on:
+      pg:
+        condition: service_healthy
+    # Shares the database container's PID namespace (read /proc/<backend pid>/{schedstat,syscall,smaps_rollup}).
+    pid: "service:pg"
+    cap_add: [SYS_PTRACE]
+    environment:
+      PGHOST: pg
+      PGUSER: postgres
+      PGDATABASE: repro
+      PGPASSWORD_FILE: /run/secrets/pg_password
+    secrets: [pg_password]
+    volumes:
+      - ${REPRO_DIR:-.}/results/run:/results
+    mem_limit: 4g
+    cpus: 4
+    networks: [pgctx-repro-net]
+
+secrets:
+  pg_password:
+    file: ${REPRO_DIR:-.}/secrets/pg_password.txt
+
+volumes:
+  pgctx-repro-pgdata:
+
+networks:
+  pgctx-repro-net:
