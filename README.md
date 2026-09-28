@@ -1,4 +1,4 @@
-# pgContext 0.3.0 vs pgvector 0.8.6 — why our latency results are the reverse of the published benchmark
+# pgContext 0.3.0 vs pgvector 0.8.6 — Benchmarking
 
 A self-contained reproduction of a comparison we ran while evaluating pgContext for a retrieval ("company brain")
 proof of concept. Evokoa's [pgvector comparison](https://github.com/Evokoa/pgContext/blob/master/docs/benchmarks/pgvector.md)
